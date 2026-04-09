@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: education-qa-bot
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app.main:app --workers 4 --worker-class uvicorn.workers.UvicornWorker --bind 0.0.0.0:$PORT
+    plan: free
+    envVars:
+      - key: ZHIPU_API_KEY
+        sync: false
+      - key: ZHIPU_BASE_URL
+        value: https://api.z.ai/api/anthropic
+    disk:
+      name: pdf-storage
+      mountPath: /opt/render/project/backend/pdfs
+      sizeGB: 1
