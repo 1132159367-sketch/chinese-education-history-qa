@@ -234,7 +234,7 @@ async def init_knowledge_base():
         rag = get_rag_system()
         rag.build_index(all_documents)
 
-        print(f"✓ 知识库初始化完成，共 {len(all_documents)} 个文档片段")
+        print(f"[OK] 知识库初始化完成，共 {len(all_documents)} 个文档片段")
 
         return {
             "message": "知识库初始化成功",
