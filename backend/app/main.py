@@ -24,7 +24,9 @@ load_dotenv()
 app = FastAPI(
     title="中国古代教育史问答机器人",
     description="基于智谱AI的RAG问答系统",
-    version="1.0.0"
+    version="1.0.0",
+    # 添加必要的配置
+    docs_url="/docs"
 )
 
 # 配置CORS
