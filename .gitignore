@@ -6,33 +6,11 @@ __pycache__/
 .Python
 env/
 venv/
-ENV/
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
+.venv/
 
 # 环境变量
 .env
-
-# PDF文件
-backend/pdfs/*.pdf
-
-# 向量索引缓存
-*.index
-*.pkl
-*.npy
+.env.local
 
 # IDE
 .vscode/
@@ -45,9 +23,33 @@ backend/pdfs/*.pdf
 .DS_Store
 Thumbs.db
 
+# 测试和临时文件
+test_*.py
+
+# 不必要的文档（已删除）
+DEPLOYMENT.md
+DEVELOPER_GUIDE.md
+QUICK_DEPLOY.md
+RENDER_DEPLOY.md
+RENDER_MINIMAL_GUIDE.md
+RENDER_TROUBLESHOOT.md
+SECURITY_GUIDE.md
+ALTERNATIVE_DEPLOYMENT.md
+
+# 其他部署平台配置（暂时不需要）
+fly.toml
+zeabur.yaml
+railway.json
+railway.toml
+railway.json
+
+# PDF文件
+backend/pdfs/*.pdf
+
+# 向量索引缓存
+*.index
+*.pkl
+*.npy
+
 # 日志
 *.log
-
-# 临时文件
-*.tmp
-*.temp

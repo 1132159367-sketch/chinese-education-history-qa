@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: education-qa-bot
+    env: python
+    plan: free
+    envVars:
+      - key: ZHIPU_API_KEY
+        sync: false
+      - key: ZHIPU_BASE_URL
+        value: https://api.z.ai/api/anthropic
+    startCommand: python run.py
