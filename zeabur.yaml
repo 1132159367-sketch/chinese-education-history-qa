@@ -1,0 +1,25 @@
+# Zeabur 部署配置
+
+language = "python"
+version = "1"
+
+[build]
+  type = "npm"
+  command = "npm install"
+  context = ".zeabur"
+
+[run]
+  command = "uvicorn app.main:app --host 0.0.0.0 --port 8080"
+
+[[services]]
+  name = "education-qa-bot"
+  image = "python:3.11"
+  env_vars = [
+    { key = "PORT", value = "8080" },
+    { key = "ZHIPU_API_KEY", type = "SECRET" },
+    { key = "ZHIPU_BASE_URL", value = "https://api.z.ai/api/anthropic" }
+  ]
+
+[[services.ports]]
+  number = 8080
+  type = "http"
